@@ -26,21 +26,21 @@ door.removeAttribute('locked'); // unlocks the door.
 Bindings can be cross-platform or platform-specific (e.g. Linux, Windows).
 
 Bindings have two main components:
-- The driver(s) they communicate with.
+- The type of communication they establish with the driver, such as whether the data exchange is input (I), output (O), or bidirectional (IO). Whether it's in binary or textual format; and whether it occurs through commands, data streams, or memory mapping.
 - The DOM actor involved: attributes or CSS properties they monitor or modify, and the event(s) they can dispatch.
 
-To ensure clarity, it is advisable to include a reference to both the driver and the DOM actor involved in the binding name.
+To ensure clarity, it is advisable to include a reference to both the communication type and the DOM actor involved in the binding name.
 
 Examples:
 ```
-<iot-iohubx24-lock-binding id="lockBinding" location="/dev/iohubx24-sim0">
+<iot-iobits-lock-binding id="lockBinding" location="/dev/iohubx24-sim0">
 ```
-In the example above, the binding name includes the driver name (`iohubx24`) and the action it performs (`lock/unlock`).
+In the example above, the binding name includes the type of communication with the driver (`iobits` stream of input bits) and the action it performs (`lock/unlock`).
 
 ```
-<iot-lcd-message-binding id="lcdBinding" location="/dev/lcd-sim0">
+<iot-otext-message-binding id="lcdBinding" location="/dev/lcd-sim0">
 ```
-Here, the binding name includes the driver name (`lcd`), which indicates it communicates with an LCD display, and the name of the attribute it modifies (`message`).
+Here, the binding name includes the type of communication with the driver (`otext` output textual data), which indicates it communicates with a driver that accepts text such as an LCD display driver, and the name of the attribute it modifies (`message`).
 
 ## Semantic Structure
 
