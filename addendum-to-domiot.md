@@ -38,7 +38,7 @@ Examples:
 In the example above, the binding name includes the type of communication with the driver (`iobits` stream of input bits) and the action it performs (`lock/unlock`).
 
 ```
-<iot-otext-message-binding id="lcdBinding" location="/dev/lcd-sim0">
+<iot-otext-attribute-binding id="lcdBinding" attribute-name="message" location="/dev/lcd-sim0">
 ```
 Here, the binding name includes the type of communication with the driver (`otext` output textual data), which indicates it communicates with a driver that accepts text such as an LCD display driver, and the name of the attribute it modifies (`message`).
 
